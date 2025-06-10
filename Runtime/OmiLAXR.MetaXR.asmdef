@@ -1,0 +1,17 @@
+{
+    "name": "OmiLAXR.MetaXR",
+    "rootNamespace": "OmiLAXR.MetaXR",
+    "references": [
+        "GUID:92238810d69db43818b28b85251b4b3c",
+        "GUID:2a230cb87a1d3ba4a98bdc0ddae76e6c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
