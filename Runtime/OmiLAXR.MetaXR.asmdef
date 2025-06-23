@@ -3,7 +3,10 @@
     "rootNamespace": "OmiLAXR.MetaXR",
     "references": [
         "GUID:92238810d69db43818b28b85251b4b3c",
-        "GUID:2a230cb87a1d3ba4a98bdc0ddae76e6c"
+        "GUID:2a230cb87a1d3ba4a98bdc0ddae76e6c",
+        "GUID:f64c9ebcd7899c3448a08dc9f9ddbe30",
+        "GUID:8f840851d92754fd89291b0b86a5a78b",
+        "GUID:5b80f9e8c84ce594bbd1284cff4292dd"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
