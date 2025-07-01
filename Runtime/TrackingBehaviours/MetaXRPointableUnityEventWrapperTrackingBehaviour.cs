@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using Oculus.Interaction;
+using OmiLAXR.TrackingBehaviours;
 using OmiLAXR.TrackingBehaviours.Learner;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,6 +14,8 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
      Description("Tracks interaction events of <PointableUnityEventWrapper> components.")]
     public class MetaXRPointableUnityEventWrapperTrackingBehaviour : InteractableTrackingBehaviour
     {
+        private UnityAction<PointerEvent> _onHoverStart;
+        private UnityAction<PointerEvent> _onHoverEnd;
         private UnityAction<PointerEvent> _onSelectionStart;
         private UnityAction<PointerEvent> _onSelectionEnd;
 
@@ -21,13 +24,21 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
             var interactables = Select<PointableUnityEventWrapper>(objects);
             foreach (var interactable in interactables)
             {
+                interactable.WhenHover.AddListener(_onHoverStart = (e) =>
+                {
+                    OnTouched.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                });
+                interactable.WhenUnhover.AddListener(_onHoverEnd = (e) =>
+                {
+                    OnReleased.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                });
                 interactable.WhenSelect.AddListener(_onSelectionStart = (e) =>
                 {
                     OnGrabbed.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                 });
                 interactable.WhenUnselect.AddListener(_onSelectionEnd = (e) =>
                 {
-                    // TODO: Debug.Log("lastSelectExited");
+                    OnReleased.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                 });
             }
         }
@@ -38,6 +49,8 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
             var interactables = Select<PointableUnityEventWrapper>(objects);
             foreach (var interactable in interactables)
             {
+                interactable.WhenHover.RemoveListener(_onHoverStart);
+                interactable.WhenUnhover.RemoveListener(_onHoverEnd);
                 interactable.WhenSelect.RemoveListener(_onSelectionStart);
                 interactable.WhenUnselect.RemoveListener(_onSelectionEnd);
             }

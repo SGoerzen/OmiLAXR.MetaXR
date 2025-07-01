@@ -29,15 +29,15 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
                 });
                 interactable.WhenUnhover.AddListener(_onHoverEnd = () =>
                 {
-                    // TODO: OnReleased.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                    OnReleased.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                 });
                 interactable.WhenSelect.AddListener(_onSelectionStart = () =>
                 {
-                    OnInteracted.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                    OnGrabbed.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                 });
                 interactable.WhenUnselect.AddListener(_onSelectionEnd = () =>
                 {
-                    // TODO: Debug.Log("lastSelectExited");
+                    OnInteracted.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                 });
             }
         }
