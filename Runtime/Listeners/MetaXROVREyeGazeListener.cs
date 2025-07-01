@@ -2,7 +2,7 @@
 
 namespace OmiLAXR.MetaXR.Listeners
 {
-    public class MetaXREyeGazeListener : Listener
+    public class MetaXROVREyeGazeListener : Listener
     {
         public override void StartListening()
         {
