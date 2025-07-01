@@ -19,11 +19,14 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
 
         protected override void OnStartedPipeline(Pipeline pipeline)
         {
-            SetInterval(() =>
+            if (OVRPlugin.faceTrackingEnabled)
             {
-                OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState);
-                OnFaceStateTracking.Invoke(this, _currentFaceState.ExpressionWeights);
-            }, intervalSettings);
+                SetInterval(() =>
+                {
+                    OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState);
+                    OnFaceStateTracking.Invoke(this, _currentFaceState.ExpressionWeights);
+                }, intervalSettings);
+            }
         }
     }
 }
