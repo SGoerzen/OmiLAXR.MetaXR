@@ -1,7 +1,11 @@
-﻿using OmiLAXR.Listeners;
+﻿using System.ComponentModel;
+using OmiLAXR.Listeners;
+using UnityEngine;
 
 namespace OmiLAXR.MetaXR.Listeners
-{
+{   
+    [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <OVREyeGaze> Objects Listener"),
+      Description("Provides all <OVREyeGaze> components to pipeline.")]
     public class MetaXROVREyeGazeListener : Listener
     {
         public override void StartListening()
