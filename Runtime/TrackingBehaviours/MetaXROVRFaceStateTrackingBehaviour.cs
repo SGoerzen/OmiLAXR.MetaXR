@@ -14,14 +14,15 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
         
         private OVRPlugin.FaceState _currentFaceState;
         
-        public readonly TrackingBehaviourEvent<bool> OnFaceStateTracking =
-            new TrackingBehaviourEvent<bool>();
-        
+        public readonly TrackingBehaviourEvent<float[]> OnFaceStateTracking =
+            new TrackingBehaviourEvent<float[]>();
+
         protected override void OnStartedPipeline(Pipeline pipeline)
         {
             SetInterval(() =>
             {
-                OnFaceStateTracking.Invoke(this, OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState));
+                OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState);
+                OnFaceStateTracking.Invoke(this, _currentFaceState.ExpressionWeights);
             }, intervalSettings);
         }
     }
