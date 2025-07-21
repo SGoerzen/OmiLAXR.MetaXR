@@ -51,7 +51,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
                     // interactor stops grabbing interactable
                     if (e.PreviousState == InteractableState.Select && e.NewState == InteractableState.Hover)
                     {
-                        OnInteracted.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                        OnReleased.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                     }
                 };
 
