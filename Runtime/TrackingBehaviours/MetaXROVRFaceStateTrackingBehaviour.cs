@@ -24,6 +24,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
                 SetInterval(() =>
                 {
                     OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState);
+                    Debug.Log(_currentFaceState);
                     OnFaceStateTracking.Invoke(this, _currentFaceState.ExpressionWeights);
                 }, intervalSettings);
             }
