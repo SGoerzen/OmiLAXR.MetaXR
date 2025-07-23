@@ -10,7 +10,7 @@
   "licensesUrl": "https://gitlab.com/learntech-rwth/omilaxr-ecosystem/v2/xr-framework-modules/omilaxr.metaxr/-/blob/main/LICENSE",
   "homepage": "https://gitlab.com/learntech-rwth/omilaxr-ecosystem/v2/xr-framework-modules/omilaxr.metaxr",
   "dependencies": {
-    "com.rwth.unity.omilaxr": "2.0.18"
+    "com.rwth.unity.omilaxr": "2.2.0"
   },
   "keywords": [
     "OmiLAXR",
