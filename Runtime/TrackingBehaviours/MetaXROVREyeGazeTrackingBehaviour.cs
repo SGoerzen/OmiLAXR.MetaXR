@@ -8,29 +8,21 @@ namespace OmiLAXR.MetaXR
      Description("Realize the <EyeTrackingBehaviour> for MetaXR <OVREyeGaze> component.")]
     public class MetaXROVREyeGazeTrackingBehaviour : EyeTrackingBehaviour
     {
+        private OVRCameraRig _ovrCameraRig;
+        
         public override PupilDilationData? GetPupilDilationData()
             => new PupilDilationData();
 
         public override double? GetViewingAngle()
             => 0;
 
+        public override Transform HmdTransform => _ovrCameraRig.centerEyeAnchor;
+
         protected override void AfterFilteredObjects(EyeInteractor[] objects)
         {
-            foreach (var ei in objects)
-            {
-                var c = ei.GetComponent<OVREyeGaze>();
-                if (!c)
-                    continue;
-                if (!leftEye && c.Eye == OVREyeGaze.EyeId.Left)
-                {
-                    leftEye = ei;
-                }
-
-                if (!rightEye && c.Eye == OVREyeGaze.EyeId.Right)
-                {
-                    rightEye = ei;
-                }
-            }
+            _ovrCameraRig = FindObjectOfType<OVRCameraRig>();
+            
+            base.AfterFilteredObjects(objects);
         }
     }
 }

@@ -177,6 +177,7 @@ MonoBehaviour:
   layersToInclude:
     serializedVersion: 2
     m_Bits: 4294967295
+  fixationLogic: {fileID: 11400000, guid: 52e7d3a2b67c3634b9429b34bb7fa50f, type: 2}
 --- !u!1 &8068008891619053603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1298850034492121642, guid: 06615a790d39542af99bab4185d78304, type: 3}
@@ -258,7 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addTransformWatcher: 1
-  validationEnabled: 1
   debugConfig:
     enabled: 1
     rayWidth: 0.01
