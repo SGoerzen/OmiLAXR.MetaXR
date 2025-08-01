@@ -69,6 +69,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1298850034492121642, guid: 06615a790d39542af99bab4185d78304, type: 3}
       insertIndex: -1
       addedObject: {fileID: 605021797688711579}
+    - targetCorrespondingSourceObject: {fileID: 1298850034492121642, guid: 06615a790d39542af99bab4185d78304, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4787188991873039375}
+    - targetCorrespondingSourceObject: {fileID: 1298850034492121642, guid: 06615a790d39542af99bab4185d78304, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5733354278138241989}
     - targetCorrespondingSourceObject: {fileID: 5165254496319043146, guid: 06615a790d39542af99bab4185d78304, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5452036722433594859}
@@ -168,6 +174,9 @@ MonoBehaviour:
   rayDistance: 30
   leftEye: {fileID: 0}
   rightEye: {fileID: 0}
+  layersToInclude:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8068008891619053603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1298850034492121642, guid: 06615a790d39542af99bab4185d78304, type: 3}
@@ -224,3 +233,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fa1e32f8924ff38ae038b065b4981b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4787188991873039375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068008891619053603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15262140ff849efa59c9459182ef175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5733354278138241989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068008891619053603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75cad83073d4efdbba7edb842e649c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addTransformWatcher: 1
+  validationEnabled: 1
+  debugConfig:
+    enabled: 1
+    rayWidth: 0.01
+    rayDistance: 5
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    rayHoverColor: {r: 1, g: 0, b: 0, a: 1}
