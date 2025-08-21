@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Oculus.Interaction.Locomotion;
 using OmiLAXR.TrackingBehaviours;
+using OmiLAXR.TrackingBehaviours.Learner;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
