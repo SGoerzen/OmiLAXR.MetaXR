@@ -14,7 +14,7 @@ namespace OmiLAXR.MetaXR
         public override PupilDilationData? GetPupilDilationData()
             => new PupilDilationData();
 
-        public override double? GetViewingAngle() => 0;
+        public override float? GetViewingAngle() => 0;
 
         public override void StartCalibration()
             => throw new System.NotImplementedException();
