@@ -12,7 +12,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
     
     [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR HandGrabInteractable Tracking Behaviour"), 
      Description("Tracks interaction events of <HandGrabInteractable> components.")]
-    public class MetaXRHandGrabInteractableTrackingBehaviour : InteractableTrackingBehaviour
+    public sealed class MetaXRHandGrabInteractableTrackingBehaviour : InteractableTrackingBehaviour
     {
         
         struct InteractionState

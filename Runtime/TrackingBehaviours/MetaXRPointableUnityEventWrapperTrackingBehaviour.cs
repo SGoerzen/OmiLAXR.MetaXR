@@ -10,7 +10,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
     
     [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR Pointable Unity Event Wrapper Tracking Behaviour"), 
      Description("Tracks interaction events of <PointableUnityEventWrapper> components.")]
-    public class MetaXRPointableUnityEventWrapperTrackingBehaviour : InteractableTrackingBehaviour
+    public sealed class MetaXRPointableUnityEventWrapperTrackingBehaviour : InteractableTrackingBehaviour
     {
         private UnityAction<PointerEvent> _onHoverStart;
         private UnityAction<PointerEvent> _onHoverEnd;

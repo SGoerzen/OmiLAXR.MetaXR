@@ -7,28 +7,16 @@ namespace OmiLAXR.MetaXR
 {
     [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR <OVREyeGaze> Tracking Behaviour"),
      Description("Realize the <EyeTrackingBehaviour> for MetaXR <OVREyeGaze> component.")]
-    public class MetaXrovrEyeGazeTrackingGazeTrackingBehaviour : EyeGazeTrackingBehaviour
+    public sealed class MetaXROVREyeGazeTrackingBehaviour : EyeGazeTrackingBehaviour
     {
         private OVRCameraRig _ovrCameraRig;
-        
-        public override PupilDilationData? GetPupilDilationData()
-            => new PupilDilationData();
-
-        public override float? GetViewingAngle() => 0;
-
-        public override void StartCalibration()
-            => throw new System.NotImplementedException();
-
-        public override void StopCalibration()
-            => throw new System.NotImplementedException();
-
-        public override bool IsCalibrated => true;
-        public override bool NeedsCalibration => false;
         
         public override Transform HmdTransform => _ovrCameraRig.centerEyeAnchor;
         
         private static Eye ToEye(OVREyeGaze t)
         {
+            if (t == null)
+                return Eye.Unknown;
             switch (t.Eye)
             {
                 case OVREyeGaze.EyeId.Left:

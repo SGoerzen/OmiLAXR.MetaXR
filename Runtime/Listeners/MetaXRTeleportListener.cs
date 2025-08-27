@@ -7,7 +7,7 @@ namespace OmiLAXR.MetaXR.Listeners
 {
     [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <TeleportInteractor> Objects Listener"),
      Description("Provides all <TeleportInteractor> components to pipeline.")]
-    public class MetaXRTeleportListener : Listener
+    public sealed class MetaXRTeleportListener : Listener
     {
         public override void StartListening()
         {

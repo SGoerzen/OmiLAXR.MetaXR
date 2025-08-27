@@ -7,7 +7,7 @@ namespace OmiLAXR.MetaXR.Listeners
 {
     [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <InteractableUnityEventWrapper> Objects Listener"),
      Description("Provides all <InteractableUnityEventWrapper> components to pipeline.")]
-    public class MetaXRInteractableUnityEventWrapperListener : AutoListener<InteractableUnityEventWrapper>
+    public sealed class MetaXRInteractableUnityEventWrapperListener : AutoListener<InteractableUnityEventWrapper>
     {
         
     }

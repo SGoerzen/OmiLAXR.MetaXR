@@ -8,7 +8,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
     
     [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR OVRInput Tracking Behaviour"), 
      Description("Tracks controller button presses using <OVRInput>.")]
-    public class MetaXROVRInputTrackingBehaviour : InputSystemTrackingBehaviour
+    public sealed class MetaXROVRInputTrackingBehaviour : InputSystemTrackingBehaviour
     {
 
         private List<OVRInput.Controller> _trackedControllers = new List<OVRInput.Controller>

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Oculus.Interaction.Locomotion;
-using OmiLAXR.TrackingBehaviours;
 using OmiLAXR.TrackingBehaviours.Learner;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -11,7 +10,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours {
     
     [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR Teleportation Tracking Behaviour"), 
      Description("Tracks teleportation events of <TeleportInteractor> components.")]
-    public class MetaXRTeleportationTrackingBehaviour : TeleportationTrackingBehaviour
+    public sealed class MetaXRTeleportationTrackingBehaviour : TeleportationTrackingBehaviour
     {
 
         struct TeleportState
@@ -19,7 +18,8 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours {
             public TeleportInteractor interactor;
             public Action<LocomotionEvent> action;
         }
-        Dictionary<int, TeleportState> _teleportStates = new Dictionary<int, TeleportState>();
+
+        readonly Dictionary<int, TeleportState> _teleportStates = new Dictionary<int, TeleportState>();
         
         protected override void AfterFilteredObjects(Object[] objects)
         {

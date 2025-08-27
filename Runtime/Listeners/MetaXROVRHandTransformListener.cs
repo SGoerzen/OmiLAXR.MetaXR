@@ -6,19 +6,12 @@ using UnityEngine;
 
 namespace OmiLAXR.MetaXR.Listeners
 {
-    
-    [Serializable]
-    public struct HandIgnore
-    {
-        public bool HandLeft;
-        public bool HandRight;
-    }
-    
     [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <OVRHand> Objects Listener"),
      Description("Provides all <OVRHand> components (left or right hand) to pipeline.")]
-    public class MetaXROVRHandTransformListener : Listener
+    public sealed class MetaXROVRHandTransformListener : Listener
     {
-        public HandIgnore ignore;
+        public bool ignoreLeftHand;
+        public bool ignoreRightHand;
         
         public override void StartListening()
         {
@@ -28,13 +21,13 @@ namespace OmiLAXR.MetaXR.Listeners
                 if (hand.GetHand() == OVRPlugin.Hand.HandLeft || hand.GetHand() == OVRPlugin.Hand.HandRight)
                 {
                     // TODO: Check for name "LeftHandAnchor" / "RightHandAnchor"?
-                    if (hand.GetHand() == OVRPlugin.Hand.HandLeft && !ignore.HandLeft)
+                    if (hand.GetHand() == OVRPlugin.Hand.HandLeft && !ignoreLeftHand)
                     {
                         var tw = hand.gameObject.transform.parent.gameObject.GetComponent<TransformWatcher>() ?? hand.transform.parent.gameObject.AddComponent<TransformWatcher>();
                         Found(tw);
                     }
                     
-                    if (hand.GetHand() == OVRPlugin.Hand.HandRight && !ignore.HandRight)
+                    if (hand.GetHand() == OVRPlugin.Hand.HandRight && !ignoreRightHand)
                     {
                         var tw = hand.gameObject.transform.parent.gameObject.GetComponent<TransformWatcher>() ?? hand.transform.parent.gameObject.AddComponent<TransformWatcher>();
                         Found(tw);

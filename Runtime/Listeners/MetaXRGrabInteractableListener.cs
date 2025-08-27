@@ -7,7 +7,7 @@ namespace OmiLAXR.MetaXR.Listeners
 {
     [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <GrabInteractable> Objects Listener"),
      Description("Provides all <GrabInteractable> components to pipeline.")]
-    public class MetaXRGrabInteractableListener : AutoListener<GrabInteractable>
+    public sealed class MetaXRGrabInteractableListener : AutoListener<GrabInteractable>
     {
         
     }
