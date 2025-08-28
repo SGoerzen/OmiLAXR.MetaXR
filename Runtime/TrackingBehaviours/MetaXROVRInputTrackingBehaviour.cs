@@ -10,14 +10,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
      Description("Tracks controller button presses using <OVRInput>.")]
     public sealed class MetaXROVRInputTrackingBehaviour : InputSystemTrackingBehaviour
     {
-
-        private List<OVRInput.Controller> _trackedControllers = new List<OVRInput.Controller>
-        {
-            OVRInput.Controller.LTouch,
-            OVRInput.Controller.RTouch
-        };
-        
-        private List<OVRInput.Button> _trackedButtons = new List<OVRInput.Button>
+        private readonly List<OVRInput.Button> _trackedButtons = new List<OVRInput.Button>
         {
             OVRInput.Button.One,
             OVRInput.Button.Two,
@@ -26,30 +19,33 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
             OVRInput.Button.PrimaryHandTrigger,
             OVRInput.Button.Start
         };
+
+        private void CheckButton(OVRInput.Controller controller, OVRInput.Button button)
+        {
+            if (OVRInput.GetDown(button, controller))
+            {
+                OnPressedAnyButton.Invoke(this, new InputTrackingBehaviourArgs()
+                {
+                    ButtonName = button.ToString(),
+                    DeviceName = controller.ToString()
+                });
+            }
+            if (OVRInput.GetUp(button, controller))
+            {
+                OnReleasedAnyButton.Invoke(this, new InputTrackingBehaviourArgs()
+                {
+                    ButtonName = button.ToString(),
+                    DeviceName = controller.ToString()
+                });
+            }
+        }
         
         protected override void Update()
         {
-            foreach (var controller in _trackedControllers)
+            foreach (var button in _trackedButtons)
             {
-                foreach (var button in _trackedButtons)
-                {
-                    if (OVRInput.GetDown(button, controller))
-                    {
-                        OnPressedAnyButton.Invoke(this, new InputTrackingBehaviourArgs()
-                        {
-                            ButtonName = button.ToString(),
-                            DeviceName = controller.ToString()
-                        });
-                    }
-                    if (OVRInput.GetUp(button, controller))
-                    {
-                        OnReleasedAnyButton.Invoke(this, new InputTrackingBehaviourArgs()
-                        {
-                            ButtonName = button.ToString(),
-                            DeviceName = controller.ToString()
-                        });
-                    }
-                }
+                CheckButton(OVRInput.Controller.LTouch, button);
+                CheckButton(OVRInput.Controller.RTouch, button);
             }
         }
     }

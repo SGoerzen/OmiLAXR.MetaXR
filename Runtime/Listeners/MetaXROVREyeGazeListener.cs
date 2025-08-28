@@ -1,29 +1,13 @@
-﻿using System.Linq;
-using OmiLAXR.Extensions;
+﻿using System.ComponentModel;
 using OmiLAXR.Listeners;
-using OmiLAXR.TrackingBehaviours.Learner.Gaze;
-using OmiLAXR.TrackingBehaviours.Learner.Gaze.Fixation;
+using UnityEngine;
 
 namespace OmiLAXR.MetaXR.Listeners
 {
-    public sealed class MetaXROVREyeGazeListener : Listener
+    [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <OVREyeGaze> Listener")]
+    [Description("Prepares the <OVREyeGaze> components for gaze tracking.")]
+    public sealed class MetaXROVREyeGazeListener : GazeDetectorListener<OVREyeGaze>
     {
-        public bool enableFixation = true;
-        public override void StartListening()
-        {
-            print("Search for OVREyeGaze");
-            var eyeGazes = FindObjects<OVREyeGaze>();
-            print($"Found {eyeGazes.Length} <OVREyeGaze> objects.");
-            var gds = eyeGazes.Select(eg =>
-            {
-                print("Found " + eg.gameObject.name);
-                var go = eg.gameObject;
-                var gd = go.EnsureComponent<GazeDetector>();
-                if (enableFixation)
-                    go.EnsureComponent<FixationDetector>();
-                return gd;
-            });
-            Found(gds.ToArray());
-        }
+        protected override bool IsCorrectComponent(OVREyeGaze component) => true;
     }
 }
