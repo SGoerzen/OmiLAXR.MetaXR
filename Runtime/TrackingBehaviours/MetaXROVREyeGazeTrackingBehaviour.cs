@@ -27,18 +27,23 @@ namespace OmiLAXR.MetaXR
                     return Eye.Unknown;
             }
         }
-
-
+        
         protected override EyeData GenerateGazeData(GazeHit gazeHit)
-            => new EyeData(HmdTransform, gazeHit, GetEye(gazeHit.GazeDetector), 
-                0, 0, 0, 0);
+        {
+            var owner = gazeHit.GazeDetector.GetOwner<OVREyeGaze>();
+            return new EyeData(gazeOriginWorld: HmdTransform.position, 
+                gazePointWorld: gazeHit.Target.transform.position, 
+                GetEye(gazeHit.GazeDetector), 
+                -1, owner.Confidence, -1, -1); // Pupil diameter / dilation is not supported
+        }
 
         protected override Eye DetectEyeSide(GazeDetector gazeDetector)
-            => ToEye(gazeDetector.GetComponent<OVREyeGaze>());
+            => ToEye(gazeDetector.GetOwner<OVREyeGaze>());
 
         protected override void AfterFilteredObjects(GazeDetector[] objects)
         {
             _ovrCameraRig = FindObjectOfType<OVRCameraRig>();
+            AutoAssignOwners<OVREyeGaze>(objects);
             base.AfterFilteredObjects(objects);
         }
     }

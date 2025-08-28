@@ -176,7 +176,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   rayDistance: 30
   fixationLogic: {fileID: 11400000, guid: 52e7d3a2b67c3634b9429b34bb7fa50f, type: 2}
-  saccadeLogic: {fileID: 0}
+  saccadeLogic: {fileID: 11400000, guid: 77cef89b08b729f46a6d74fed9b42271, type: 2}
   leftEyeDetector: {fileID: 0}
   rightEyeDetector: {fileID: 0}
   createDataForSide: 3
