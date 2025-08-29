@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace OmiLAXR.MetaXR
 {
-    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR <OVREyeGaze> Tracking Behaviour"),
+    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / [MetaXR] <OVREyeGaze> Tracking Behaviour"),
      Description("Realize the <EyeTrackingBehaviour> for MetaXR <OVREyeGaze> component.")]
     public sealed class MetaXROVREyeGazeTrackingBehaviour : EyeGazeTrackingBehaviour
     {

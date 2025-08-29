@@ -6,7 +6,7 @@ using UnityEngine;
 namespace OmiLAXR.MetaXR.TrackingBehaviours
 {
     
-    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR OVRInput Tracking Behaviour"), 
+    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / [MetaXR] <OVRInput> Tracking Behaviour"), 
      Description("Tracks controller button presses using <OVRInput>.")]
     public sealed class MetaXROVRInputTrackingBehaviour : InputSystemTrackingBehaviour
     {

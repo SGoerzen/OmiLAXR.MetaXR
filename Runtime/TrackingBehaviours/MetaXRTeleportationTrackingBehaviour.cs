@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 namespace OmiLAXR.MetaXR.TrackingBehaviours {
     
-    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR Teleportation Tracking Behaviour"), 
+    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / [MetaXR] Teleportation Tracking Behaviour"), 
      Description("Tracks teleportation events of <TeleportInteractor> components.")]
     public sealed class MetaXRTeleportationTrackingBehaviour : TeleportationTrackingBehaviour
     {

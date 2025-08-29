@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 namespace OmiLAXR.MetaXR.TrackingBehaviours
 {
     
-    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR HandGrabInteractable Tracking Behaviour"), 
+    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / [MetaXR] HandGrabInteractable Tracking Behaviour"), 
      Description("Tracks interaction events of <HandGrabInteractable> components.")]
     public sealed class MetaXRHandGrabInteractableTrackingBehaviour : InteractableTrackingBehaviour
     {

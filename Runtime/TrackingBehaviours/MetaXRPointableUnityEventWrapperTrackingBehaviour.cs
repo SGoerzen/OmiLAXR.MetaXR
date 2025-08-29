@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 namespace OmiLAXR.MetaXR.TrackingBehaviours
 {
     
-    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / MetaXR Pointable Unity Event Wrapper Tracking Behaviour"), 
+    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / [MetaXR] <PointableUnityEventWrapper> Tracking Behaviour"), 
      Description("Tracks interaction events of <PointableUnityEventWrapper> components.")]
     public sealed class MetaXRPointableUnityEventWrapperTrackingBehaviour : InteractableTrackingBehaviour
     {
