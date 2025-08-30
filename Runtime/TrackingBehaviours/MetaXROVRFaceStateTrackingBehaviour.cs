@@ -11,9 +11,6 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
     {
         private OVRPlugin.FaceState _currentFaceState;
         
-        public readonly TrackingBehaviourEvent<float[]> OnFaceStateTracking =
-            new TrackingBehaviourEvent<float[]>();
-        
         protected override void Run()
         {
             var isEnabled = OVRPlugin.faceTrackingEnabled && OVRPlugin.faceTrackingSupported ||
@@ -26,7 +23,6 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
             
             OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState);
             Debug.Log(_currentFaceState);
-            OnFaceStateTracking.Invoke(this, _currentFaceState.ExpressionWeights);
         }
     }
 }

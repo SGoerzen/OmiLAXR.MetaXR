@@ -13,6 +13,18 @@ namespace OmiLAXR.MetaXR.Components
     [AddComponentMenu("OmiLAXR / Config / MetaXR Eye Calibrator")]
     public sealed class MetaXREyeCalibrator : EyeCalibrator
     {
+        private void Awake()
+        {
+            // if (!OVRPlugin.eyeTrackingSupported)
+            // {
+            //     Debug.LogWarning("Eye tracking not supported on this device.");
+            //     enabled = false;
+            //     return;
+            // }
+            // Tipp: OVRManager → Permissions Request On Startup: Eye Tracking anhaken
+            // (oder Permission manuell anfragen)
+        }
+        
         protected override void Start()
         {
             var headsetType = OVRPlugin.GetSystemHeadsetType();
