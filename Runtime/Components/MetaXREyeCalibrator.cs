@@ -15,12 +15,12 @@ namespace OmiLAXR.MetaXR.Components
     {
         private void Awake()
         {
-            // if (!OVRPlugin.eyeTrackingSupported)
-            // {
-            //     Debug.LogWarning("Eye tracking not supported on this device.");
-            //     enabled = false;
-            //     return;
-            // }
+            if (!OVRPlugin.eyeTrackingSupported)
+            {
+                Debug.LogWarning("Eye tracking not supported on this device.");
+                enabled = false;
+                return;
+            }
             // Tipp: OVRManager → Permissions Request On Startup: Eye Tracking anhaken
             // (oder Permission manuell anfragen)
         }
