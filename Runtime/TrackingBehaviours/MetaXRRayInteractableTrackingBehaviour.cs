@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Oculus.Interaction;
+using Oculus.Interaction.Input;
 using OmiLAXR.TrackingBehaviours.Learner;
 using UnityEngine;
 using UnityEngine.Events;
+using Component = UnityEngine.Component;
 using Object = UnityEngine.Object;
 
 namespace OmiLAXR.MetaXR.TrackingBehaviours
@@ -14,10 +16,6 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
      Description("Tracks interaction events of <RayInteractable> components.")]
     public sealed class MetaXRRayInteractableTrackingBehaviour : InteractableTrackingBehaviour
     {
-        private UnityAction<PointerEvent> _onHoverStart;
-        private UnityAction<PointerEvent> _onHoverEnd;
-        private UnityAction<PointerEvent> _onSelectionStart;
-        private UnityAction<PointerEvent> _onSelectionEnd;
         
         struct InteractionState
         {
@@ -38,7 +36,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
                     // interactor starts hovering interactable
                     if (e.PreviousState == InteractableState.Normal && e.NewState == InteractableState.Hover)
                     {
-                        OnTouched.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                        OnPointed.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                     }
                     
                     // interactor stops hovering interactable

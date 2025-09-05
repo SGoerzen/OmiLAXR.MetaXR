@@ -24,7 +24,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
             {
                 interactable.WhenHover.AddListener(_onHoverStart = (e) =>
                 {
-                    OnTouched.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                    OnPointed.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                 });
                 interactable.WhenUnhover.AddListener(_onHoverEnd = (e) =>
                 {
