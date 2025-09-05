@@ -1,0 +1,18 @@
+{
+    "name": "OmiLAXR.MetaXR",
+    "rootNamespace": "OmiLAXR.MetaXR",
+    "references": [
+        "OmiLAXR",
+        "Oculus.Interaction",
+        "Oculus.VR"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

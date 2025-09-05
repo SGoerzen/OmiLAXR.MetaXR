@@ -1,0 +1,28 @@
+{
+  "name": "com.rwth.unity.omilaxr.metaxr",
+  "version": "0.1.0",
+  "displayName": "OmiLAXR.MetaXR",
+  "description": "An OmiLAXR module for MetaXR interactions.",
+  "unity": "2020.3",
+  "unityRelease": "15f1",
+  "documentationUrl": "https://gitlab.com/learntech-rwth/omilaxr-ecosystem/v2/xr-framework-modules/omilaxr.metaxr/-/wikis",
+  "changelogUrl": "https://gitlab.com/learntech-rwth/omilaxr-ecosystem/v2/xr-framework-modules/omilaxr.metaxr/-/blob/main/CHANGELOG",
+  "licensesUrl": "https://gitlab.com/learntech-rwth/omilaxr-ecosystem/v2/xr-framework-modules/omilaxr.metaxr/-/blob/main/LICENSE",
+  "homepage": "https://gitlab.com/learntech-rwth/omilaxr-ecosystem/v2/xr-framework-modules/omilaxr.metaxr",
+  "dependencies": {
+    "com.rwth.unity.omilaxr": "2.2.0"
+  },
+  "keywords": [
+    "OmiLAXR",
+    "OmiLAXR Module",
+    "Learning Analytics",
+    "Virtual Reality",
+    "Augmented Reality",
+    "eXtended Reality",
+	"MetaXR"
+  ],
+  "author": {
+    "name": "Marc Troll",
+    "email": "marc.troll@rwth-aachen.de"
+  }
+}
