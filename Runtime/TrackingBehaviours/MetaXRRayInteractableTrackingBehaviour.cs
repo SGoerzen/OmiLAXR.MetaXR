@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Oculus.Interaction;
-using Oculus.Interaction.Input;
 using OmiLAXR.TrackingBehaviours.Learner;
 using UnityEngine;
-using UnityEngine.Events;
-using Component = UnityEngine.Component;
 using Object = UnityEngine.Object;
 
 namespace OmiLAXR.MetaXR.TrackingBehaviours
