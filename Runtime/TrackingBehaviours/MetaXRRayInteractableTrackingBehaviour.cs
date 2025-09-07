@@ -33,7 +33,7 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
                     // interactor starts hovering interactable
                     if (e.PreviousState == InteractableState.Normal && e.NewState == InteractableState.Hover)
                     {
-                        OnPointed.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
+                        OnTouched.Invoke(this, new InteractableEventArgs(interactable.transform.gameObject));
                     }
                     
                     // interactor stops hovering interactable
