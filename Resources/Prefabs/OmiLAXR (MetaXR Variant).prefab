@@ -207,7 +207,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scheduler: {fileID: 0}
-  emotions: []
+  emotions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4520887885325792849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4849332239243691096, guid: 06615a790d39542af99bab4185d78304, type: 3}

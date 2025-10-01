@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using OmiLAXR.Components;
 using OmiLAXR.MetaXR.Components;
-using OmiLAXR.TrackingBehaviours;
+using OmiLAXR.TrackingBehaviours.Learner;
 using UnityEngine;
 
 namespace OmiLAXR.MetaXR.TrackingBehaviours
 {
-    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / [MetaXR] <FaceState> Tracking Behaviour"),
+    [AddComponentMenu("OmiLAXR / 3) Tracking Behaviours / [MetaXR] <FaceState> Tracking Behaviour (Alpha)"),
      Description("Tracks Face State (untested, in development).")]
     public sealed class MetaXROVRFaceStateTrackingBehaviour : FacialTrackingBehaviour
     {
