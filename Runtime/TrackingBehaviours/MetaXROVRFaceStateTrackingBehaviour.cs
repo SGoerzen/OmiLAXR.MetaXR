@@ -10,21 +10,48 @@ namespace OmiLAXR.MetaXR.TrackingBehaviours
      Description("Tracks Face State (untested, in development).")]
     public sealed class MetaXROVRFaceStateTrackingBehaviour : FacialTrackingBehaviour
     {
+        private bool _started;
+        private double _lastGoodFrameTime; // when we last saw valid data
         private OVRPlugin.FaceState _currentFaceState;
 
         public override bool IsAvailable => OVRPlugin.faceTrackingSupported || OVRPlugin.faceTracking2Supported;
-        public override bool IsEnabled => OVRPlugin.faceTrackingEnabled || OVRPlugin.faceTracking2Enabled;
+        // Treat as enabled if we successfully started AND saw data in the last second.
+        public override bool IsEnabled =>
+            _started && (Time.realtimeSinceStartupAsDouble - _lastGoodFrameTime) < 1.0;
 
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            if (OVRPlugin.faceTracking2Supported) OVRPlugin.StartFaceTracking2(new []{ OVRPlugin.FaceTrackingDataSource.Visual, OVRPlugin.FaceTrackingDataSource.Audio });
+            else if (OVRPlugin.faceTrackingSupported) OVRPlugin.StartFaceTracking();
+        }
+        
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            if (OVRPlugin.faceTracking2Enabled) OVRPlugin.StopFaceTracking2();
+            if (OVRPlugin.faceTrackingEnabled)  OVRPlugin.StopFaceTracking();
+        }
+        
         protected override FaceData FetchFaceData()
         {
-            // Query latest face state from OVR
-            OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState);
+            var got = OVRPlugin.GetFaceState(OVRPlugin.Step.Render, -1, ref _currentFaceState);
 
-            // Wrap as FaceData for your existing pipeline
+            if (!got ||
+                _currentFaceState.ExpressionWeights == null ||
+                _currentFaceState.ExpressionWeights.Length == 0)
+                return null;
+
+            // Optional: skip frame if all weights are zero (e.g. not yet tracking)
+            // if (_currentFaceState.ExpressionWeights.All(w => w == 0f)) return null;
+
+            _lastGoodFrameTime = Time.realtimeSinceStartupAsDouble;
+
             return new MetaXROVRFaceData(
                 _currentFaceState.ExpressionWeights,
                 _currentFaceState.ExpressionWeightConfidences
             );
         }
+
     }
 }
