@@ -1,0 +1,31 @@
+﻿cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "OmiLAXR.MetaXR"
+version: "2.2.0"
+date-released: 2025-08-17
+repository-code: "https://github.com/SGoerzen/OmiLAXR.xAPI"
+url: "https://omilaxr.dev/"
+license: "AGPL-3.0-or-later"
+authors:
+  - given-names: "Marc"
+    family-names: "Troll"
+    affiliation: "RWTH Aachen University"
+abstract: >
+  OmiLAXR.MetaXR provides the a collection of components to collect data from MetaXR SDK environment.
+keywords:
+  - Learning Analytics
+  - XR
+  - Virtual Reality
+  - Augmented Reality
+  - Unity
+  - xAPI
+preferred-citation:
+  type: software
+  title: "OmiLAXR.MetaXR"
+  version: "2.2.0"
+  date-released: 2025-08-17
+  url: "https://omilaxr.dev/"
+  authors:
+    - given-names: "Marc"
+      family-names: "Troll"
