@@ -10,7 +10,7 @@ using UnityEngine;
 namespace OmiLAXR.MetaXR.Components
 {
     [DisallowMultipleComponent]
-    [AddComponentMenu("OmiLAXR / Config / MetaXR Eye Calibrator")]
+    [AddComponentMenu("OmiLAXR / Config / [MetaXR] Eye Calibrator")]
     public sealed class MetaXREyeCalibrator : EyeCalibrator
     {
         private void Awake()

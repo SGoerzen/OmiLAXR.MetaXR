@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace OmiLAXR.MetaXR.Listeners
 {
-    [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <OVREyeGaze> Listener")]
+    [AddComponentMenu("OmiLAXR / 1) Listeners / [MetaXR] <OVREyeGaze> Listener")]
     [Description("Prepares the <OVREyeGaze> components for gaze tracking.")]
     public sealed class MetaXROVREyeGazeListener : GazeDetectorListener<OVREyeGaze>
     {

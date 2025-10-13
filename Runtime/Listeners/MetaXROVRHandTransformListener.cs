@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace OmiLAXR.MetaXR.Listeners
 {
-    [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <OVRHand> Objects Listener"),
+    [AddComponentMenu("OmiLAXR / 1) Listeners / [MetaXR] <OVRHand> Objects Listener"),
      Description("Provides all <OVRHand> components (left or right hand) to pipeline.")]
     public sealed class MetaXROVRHandTransformListener : Listener
     {

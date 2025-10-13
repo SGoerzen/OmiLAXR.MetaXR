@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace OmiLAXR.MetaXR.Listeners
 {
-    [AddComponentMenu("OmiLAXR / 1) Listeners / MetaXR <TeleportInteractor> Objects Listener"),
+    [AddComponentMenu("OmiLAXR / 1) Listeners / [MetaXR] <TeleportInteractor> Objects Listener"),
      Description("Provides all <TeleportInteractor> components to pipeline.")]
     public sealed class MetaXRTeleportListener : Listener
     {
