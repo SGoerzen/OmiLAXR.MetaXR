@@ -1,10 +1,10 @@
-﻿cff-version: 1.2.0
+cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 type: software
 title: "OmiLAXR.MetaXR"
 version: "2.2.0"
 date-released: 2025-08-17
-repository-code: "https://github.com/SGoerzen/OmiLAXR.xAPI"
+repository-code: "https://github.com/SGoerzen/OmiLAXR.MetaXR"
 url: "https://omilaxr.dev/"
 license: "AGPL-3.0-or-later"
 authors:
@@ -19,7 +19,7 @@ keywords:
   - Virtual Reality
   - Augmented Reality
   - Unity
-  - xAPI
+  - MetaXR
 preferred-citation:
   type: software
   title: "OmiLAXR.MetaXR"
